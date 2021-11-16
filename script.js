@@ -1,13 +1,12 @@
-let map; 
-
+let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 39.90203869987111, lng: -80.18685079459867 },
     zoom: 17, 
     styles: 
-[
+    [
     {
-         "featureType": "administrative",
+        "featureType": "administrative",
         "elementType": "all",
         "stylers": [
             {
@@ -323,6 +322,17 @@ const westhall = new google.maps.Marker({
     title: "West Hall",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon28.png",
   }); 
+  const infowindow = new google.maps.InfoWindow({
+    content: "This is West Hall, one of four girls upperclassmen halls.",
+  });
+ 
+  westhall.addListener("click", () => {
+    infowindow.open({
+      anchor: westhall,
+      map,
+      shouldFocus: false,
+    });
+  });
 
 const WesthallCoords = [
     { lat: 39.90055455879919, lng: -80.18640635436637},
@@ -348,6 +358,17 @@ const bulhhall = new google.maps.Marker({
     map,
     title: "Buhl Hall",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon14.png",
+  });
+  const Infowindow = new google.maps.InfoWindow({
+    content: "This is Buhl which hosues our Communications, English and other acidmeic departments.",
+  });
+ 
+  bulhhall.addListener("click", () => {
+    infowindow.open({
+      anchor: bulhhall,
+      map,
+      shouldFocus: false,
+    });
   });
 
 const BuhlhallCoords = [
@@ -380,6 +401,16 @@ const GPacCoords = new google.maps.Marker({
     title: "GPAC",
     icon: "https://maps.google.com/mapfiles/kml/shapes/arts.png", 
 });
+const iNfowindow = new google.maps.InfoWindow({
+    content: "This is the GPAC, this is out peforming arts building",
+  });
+ 
+  gpac.addListener("click", () => {
+    infowindow.open({
+      anchor: gpac,
+      map,
+      shouldFocus: false,
+    });
 
 const GpacCoords = [
     { lat: 39.90003, lng: -80.18801},
@@ -397,12 +428,23 @@ const GpacCoords = [
         fillOpacity: 0.35,
     });
     GpacPolygon.setMap(map);
+
 const ThayerCoords   = new google.maps.Marker({
     position: { lat: 39.89980, lng: -80.18429}, 
     map,
     title: "Thayer Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon28.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This Thayer, one of two underclassmen boys dorms",
+  });
+ 
+  Thayer.addListener("click", () => {
+    infowindow.open({
+      anchor: Thayer,
+      map,
+      shouldFocus: false,
+    });
 const thayerCoords = [
     { lat: 39.89979405526052, lng: -80.1842868141645},
     { lat: 39.89979199755706, lng: -80.18416343255097},
@@ -424,12 +466,23 @@ const thayerCoords = [
         fillOpacity: 0.35,
     });
         ThayerPolygon.setMap(map);
+
 const Pollock   = new google.maps.Marker({
     position:  { lat: 39.89932966350404, lng: -80.18516459443458 }, 
     map,
     title: "Pollock Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon28.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This Pollock, one of four girl unpperclassmen girls dorms",
+  });
+ 
+  Pollock.addListener("click", () => {
+    infowindow.open({
+      anchor: Pollock,
+      map,
+      shouldFocus: false,
+    });
 const PollockCoords = [
     { lat: 39.89932966350404, lng: -80.18516459443458 }, 
      { lat: 39.89932674703466, lng: -80.18474261889916 }, 
@@ -447,12 +500,23 @@ const PollockPolygon = new google.maps.Polygon({
         fillOpacity: 0.35,
     });
         PollockPolygon.setMap(map);
-const Stewart    = new google.maps.Marker({
+
+const Stewart  = new google.maps.Marker({
     position: { lat: 39.89820313942542, lng: -80.18674222997413 }, 
     map,
     title: "Stewart Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal4/icon10.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This Stewart, out scinence building",
+  });
+ 
+  Stewart.addListener("click", () => {
+    infowindow.open({
+      anchor: Stewart,
+      map,
+      shouldFocus: false,
+    });
   const StewartCoords = [
     { lat: 39.89820313942542, lng: -80.18674222997413 },
     { lat: 39.898196966171525, lng: -80.1864800440406 },
@@ -478,6 +542,16 @@ const South  = new google.maps.Marker({
     title: "South Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon28.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This South,one of four girl upperclassmen dorms",
+  });
+ 
+  South.addListener("click", () => {
+    infowindow.open({
+      anchor: south,
+      map,
+      shouldFocus: false,
+    });
 const SouthCoords = [
     { lat: 39.90036605487646, lng: -80.18613153937626 },
     { lat: 39.90036296834702, lng: -80.18572786691594 },
@@ -503,6 +577,16 @@ const East  = new google.maps.Marker({
     title: "East Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon28.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This East,one of four girl upperclassmen dorms",
+  });
+ 
+  East.addListener("click", () => {
+    infowindow.open({
+      anchor: East,
+      map,
+      shouldFocus: false,
+    });
 const EastCoords = [
     { lat: 39.90053762015809, lng: -80.18560529398341 },
     { lat: 39.90053762015809, lng: -80.18542619172558 },
@@ -528,6 +612,16 @@ const Willy  = new google.maps.Marker({
     title: "Willison Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon28.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This Willy , boys upperclassmen dorms",
+  });
+ 
+  Willy.addListener("click", () => {
+    infowindow.open({
+      anchor: Willy,
+      map,
+      shouldFocus: false,
+    });
 
 const WillisonCoords = [
   { lat: 39.897538998708136, lng: -80.18620531789718 },
@@ -555,7 +649,16 @@ const Eberly  = new google.maps.Marker({
     title: "Eberly  ",
     icon: "https://maps.google.com/mapfiles/kml/pal4/icon0.png"
   });
-
+const infowindow = new google.maps.InfoWindow({
+    content: "This Eberly our libbery on campus",
+  });
+ 
+  Eberly.addListener("click", () => {
+    infowindow.open({
+      anchor: Eberly,
+      map,
+      shouldFocus: false,
+    });
 const EberlyCoords = [
 { lat: 39.90005305490059, lng: -80.18549297214429 },
 { lat: 39.900042602452224, lng: -80.18519237546121 },
@@ -583,7 +686,16 @@ const feildhouse = new google.maps.Marker({
     title: "feildhouse ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon57.png"
   });
-
+const infowindow = new google.maps.InfoWindow({
+    content: "This is the feildhouse where basketball games, wrestling and other indoor sports are played. ",
+  });
+ 
+  feildhouse.addListener("click", () => {
+    infowindow.open({
+      anchor: feildhouse,
+      map,
+      shouldFocus: false,
+    });
 const FieldhouseCoords = [
     { lat: 39.89822129557472, lng: -80.18785727074538 },
     { lat: 39.89821720506465, lng: -80.18727432259585 },
@@ -609,6 +721,16 @@ const Hanna = new google.maps.Marker({
     title: "Hanna Hall ",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon14.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This is Hanna Hall were the busines department is housed. ",
+  });
+ 
+  Hanna.addListener("click", () => {
+    infowindow.open({
+      anchor: Hanna,
+      map,
+      shouldFocus: false,
+    });
 
   const HannaCoords = [
     { lat: 39.899575902129406, lng: -80.18715171790629 },
@@ -636,7 +758,16 @@ const Cred = new google.maps.Marker({
     title: "CRED",
     icon: "https://maps.google.com/mapfiles/kml/pal3/icon56.png"
   });
-
+const infowindow = new google.maps.InfoWindow({
+    content: "This is CRED, this build is where labs are held for more advacne scinece classes.. ",
+  });
+ 
+  Cred.addListener("click", () => {
+    infowindow.open({
+      anchor: Cred,
+      map,
+      shouldFocus: false,
+    });
 const CREDCoords = [
     { lat: 39.8982096052761,   lng: -80.18639503044174 },
     { lat: 39.89819931652029,  lng:  -80.18609730524389 },
@@ -661,6 +792,16 @@ const Cafe = new google.maps.Marker({
     title: "Cafe",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon40.png"
   });
+const infowindow = new google.maps.InfoWindow({
+    content: "This is the cafe. Now one of three places on campus to eat at. ",
+  });
+ 
+  Cafe.addListener("click", () => {
+    infowindow.open({
+      anchor: cafe,
+      map,
+      shouldFocus: false,
+    });
 const CafCoords = [
   {lat: 39.900203456792106, lng: -80.18817887398245},
   {lat: 39.900590052054156, lng: -80.18815381174599},
@@ -686,13 +827,25 @@ const TheNest = new google.maps.Marker({
     title: "The Next",
     icon: "https://maps.google.com/mapfiles/kml/pal3/icon26.png"
   });
+});
+  const INfowindow = new google.maps.InfoWindow({
+    content: "This is the nest it is the new book store.",
+  });
+ 
+  theNest.addListener("click", () => {
+    infowindow.open({
+      anchor: theNest,
+      map,
+      shouldFocus: false,
+    });
+  }); 
 
 const theNest = [
     {lat: 39.8982031743014, lng: -80.18528256249408},
     {lat: 39.89803340961704, lng: -80.1852906091205},
     {lat: 39.89803958288567, lng: -80.18549915085532},
     {lat: 39.89820883311696, lng: -80.18549512754211},
-    {lat: 39.8982031743014, lng: -80.18528256249408},
+	{lat: 39.8982031743014, lng: -80.18528256249408},
   ];
 
 const TheNestPolygon = new google.maps.Polygon({
@@ -711,6 +864,18 @@ const CjHouse = new google.maps.Marker({
     map,
     title: "CJ house",
     icon: "https://maps.google.com/mapfiles/kml/shapes/police.png"
+  });
+});
+  const inFowindow = new google.maps.InfoWindow({
+    content: "This is the CJ house where CJ practies all of their training.",
+  });
+ 
+  CjHouse.addListener("click", () => {
+    infowindow.open({
+      anchor: CjHouse,
+      map,
+      shouldFocus: false,
+    });
   });
 
   const CjHouseCoords = [
@@ -737,7 +902,18 @@ const Chapel = new google.maps.Marker({
     title: "Robbers Chapel",
     icon: "https://maps.google.com/mapfiles/kml/pal2/icon11.png"
   });
-
+});
+  const INFowindow = new google.maps.InfoWindow({
+    content: "This is the Chapel where church is help at 11 am on tuesdays .",
+  });
+ 
+  Chapel.addListener("click", () => {
+    infowindow.open({
+      anchor: Chapel,
+      map,
+      shouldFocus: false,
+    });
+  });
 const ChapelCoords = [
     { lat: 39.90094412190922, lng: -80.18730816171713 },
     { lat: 39.900937434485016, lng:-80.18702518866414  },
@@ -761,7 +937,18 @@ const Wiley = new google.maps.Marker({
     title: "Wiley feild",
     icon: "https://maps.google.com/mapfiles/kml/pal5/icon14.pngg"
   });
-
+});
+  const infOwindow = new google.maps.InfoWindow({
+    content: "This is Wiley where we play football,soccer and other field sports.",
+  });
+ 
+  Wiley.addListener("click", () => {
+    infowindow.open({
+      anchor: Wiley,
+      map,
+      shouldFocus: false,
+    });
+  });
 const WILEYCoords = [
     { lat: 39.893254519482745, lng: -80.18153607900841 }, 
     { lat: 39.893179400851224, lng: -80.181416094374 }, 
@@ -787,7 +974,18 @@ const Stover = new google.maps.Marker({
     title: "Stover Center",
     icon: "https://maps.google.com/mapfiles/kml/pal3/icon21.png"
   });
-
+});
+  const INFOwindow = new google.maps.InfoWindow({
+    content: "This is Stover our student center which is open 24/7.",
+  });
+ 
+  Stover.addListener("click", () => {
+    infowindow.open({
+      anchor: Stover,
+      map,
+      shouldFocus: false,
+    });
+  });
 const StoverCoords = [
     {lat: 39.899772227541916, lng: -80.18636360069222},
     {lat: 39.89980309309625, lng: -80.18636695345333},
@@ -810,6 +1008,6 @@ const StoverCoords = [
     fillOpacity: 0.35,
   });
 
-   Stoverpolygon.setMap(map);
+    Stoverpolygon.setMap(map);
 
-}
+})
